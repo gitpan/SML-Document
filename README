@@ -1,0 +1,64 @@
+NAME
+
+    SML::Document - Aggregate SML::Block/s and feed it into SML::Template
+
+     $Revision: 1.1 $
+     $Date: 2004/05/19 21:03:37 $
+
+METHODS
+
+    new
+         $sml_doc = new SML::Document();
+ 
+    add_block ( $sml [, $priority ] )
+        Add sections from $sml block into this document's sections
+        collection. If there are already existing sections with same name,
+        then the new section content will replace the old one only if the
+        new one got higher $priority.
+
+    add_block_file ( $filename [, $priority ] )
+        Read $filename, then $self->add_block( $sml ). Return undef unless
+        any data read.
+
+    set_template ( $template_name, $sml )
+        Activate SML::Template object $template_name parsing $sml string
+        data.
+
+        Why to have multiple templates? The idea is to have one template for
+        each content-type to be build-up from this document. So we could
+        setup one template for text/plain, one for text/html. Feeding each
+        one will produce the right formatted output. Well there are some
+        limitations, but we'll try to solve them later.
+
+    set_template_file ( $template_name, $filename )
+        Read $filename, then $self->set_template( $template_name, $sml ).
+        Return undef unless any data read.
+
+    get_sections_names ( )
+        Get names of all document sections. In array context return array,
+        otherwise arrayref.
+
+    feed_template ( [ $template_name ] )
+        Feed block data using parsed|unparsed sml template. The template is
+        selected by $template_name or by $self-{template_default_name} >
+        which is set as first template parsed (this functionality should be
+        extended, see TODO).
+
+    base_dir ( [ $dir ] )
+        Explicitly set base dir path.
+
+    get_abs_filename ( $filename )
+        Get absolute filename.
+
+    init_config_file ( $filename )
+        Read and parse document config from $filename.
+
+    init_config ( $config_sml )
+        Parse config string, then initialize each of its recognizable parts.
+
+TODO
+
+  set_template()
+
+    method-or-mechanism able to change-or-specify default template
+

@@ -1,0 +1,138 @@
+head	1.1;
+access;
+symbols;
+locks
+	root:1.1; strict;
+comment	@# @;
+
+
+1.1
+date	2004.05.19.21.03.37;	author root;	state Exp;
+branches;
+next	;
+
+
+desc
+@@
+
+
+1.1
+log
+@Initial revision
+@
+text
+@### //////////////////////////////////////////////////////////////////////////
+#
+#	TOP
+#
+
+=head1 NAME
+
+SML::Document - Aggregate SML::Block/s and feed it into SML::Template
+
+=cut
+
+#------------------------------------------------------
+# (C) Daniel Peder & Infoset s.r.o., all rights reserved
+# http://www.infoset.com, Daniel.Peder@@infoset.com
+#------------------------------------------------------
+
+###													###
+###	size of <TAB> in this document is 4 characters	###
+###													###
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: package
+#
+
+	package SML::Document;
+
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: version
+#
+
+	use vars qw( $VERSION $VERSION_LABEL $REVISION $REVISION_DATETIME $REVISION_LABEL $PROG_LABEL );
+
+	$VERSION           = '0.10';
+	
+	$REVISION          = (qw$Revision: 1.2 $)[1];
+	$REVISION_DATETIME = join(' ',(qw$Date: 2004/05/13 21:04:19 $)[1,2]);
+	$REVISION_LABEL    = '$Id: Document.pm_rev 1.2 2004/05/13 21:04:19 root Exp root $';
+	$VERSION_LABEL     = "$VERSION (rev. $REVISION $REVISION_DATETIME)";
+	$PROG_LABEL        = __PACKAGE__." - ver. $VERSION_LABEL";
+
+=pod
+
+ $Revision: 1.2 $
+ $Date: 2004/05/13 21:04:19 $
+
+=cut
+
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: debug
+#
+
+	use vars qw( $DEBUG ); $DEBUG=0;
+	
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: constants
+#
+
+	# use constant	name		=> 'value';
+	
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: modules use
+#
+
+	require 5.005_62;
+
+	use strict                  ;
+	use warnings                ;
+	
+	use	SML::Block				;
+	use	base	qw( SML::Block );
+	
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: methods
+#
+
+=head1 METHODS
+
+=over 4
+
+=cut
+
+
+
+=back
+
+=cut
+
+
+1;
+
+__DATA__
+
+__END__
+
+### //////////////////////////////////////////////////////////////////////////
+#
+#	SECTION: TODO
+#
+
+=head1 TODO	
+
+
+=cut
+@

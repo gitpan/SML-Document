@@ -1,0 +1,18 @@
+#!/usr/bin/perl -w
+
+	use strict;
+	use warnings;
+	use Data::Dump qw(pp);
+	use	SML::Document;
+	
+	print "START\n";
+	
+	my	$doc				= new SML::Document(); 
+	my	$config_filename	= 'document2.sml';
+	
+		$doc->init_config_file( $config_filename );
+
+	print "PARSED\n";
+	
+	print $doc->feed_template();
+	

@@ -1,0 +1,3 @@
+Merge one or multiple SML::Block's, feed it into
+SML::Template and store it, print it or supply it
+as subblock for other SML::Document.
